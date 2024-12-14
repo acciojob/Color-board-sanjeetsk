@@ -12,9 +12,10 @@ for (let i = 0; i < 800; i++) {
 }
 
 function changeColor(element) {
-    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    const randomColor = getRandomColor(); // Use the new function
     element.style.backgroundColor = randomColor;
 
+    console.log(randomColor);
     //Add the active class for smooth fade out
     element.classList.add('active');
 
@@ -22,4 +23,11 @@ function changeColor(element) {
     setTimeout(() => {
         element.classList.remove('active');
     }, 1000);
+}
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
 }
