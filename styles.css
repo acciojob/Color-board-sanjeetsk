@@ -1,1 +1,39 @@
 /*  your css code here. If applicable */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(40, 20px);
+    grid-gap: 5px;
+    width: fit-content;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 4px;
+    transition: background-color 0.5s ease;
+}
+
+.square.active {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        background-color: inherit;
+    }
+
+    100% {
+        background-color: #ddd;
+    }
+}
